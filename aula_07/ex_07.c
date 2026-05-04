@@ -1,28 +1,43 @@
 #include <stdio.h>
 
 int main(){
-    int matriz[5][5];
     
-    // Leitura da matriz
-    for(int l = 0; l < 5; l++){
-        for(int c = 0; c < 5; c++){
-            printf("\nDigite o numero de l:%i, c:%i: ", l+1, c+1);
+    int matriz[5][5];
+    int soma_secundaria = 0;
+    
+  
+    for(int l=0; l < 5; l++){
+        for(int c=0; c < 5; c++){
+            printf("Digite o número da linha %i e coluna %i: ", l+1, c+1);
             scanf("%i", &matriz[l][c]);
         }
     }
 
-    int soma = 0;
+    printf("\n--- Matriz Digitada ---\n");
 
-    // Soma da diagonal secundaria (l + c == 4)
-    for(int l = 0; l < 5; l++){
-        for(int c = 0; c < 5; c++){
+  
+    for(int l=0; l < 5; l++){
+        for(int c=0; c < 4; c++){ 
+            
+        }
+        
+        
+        for(int c=0; c < 5; c++){
+            // printf(" | %i ", matriz[l][c]);
+         
             if(l + c == 4){
-                soma += matriz[l][c];
+                printf(" | %i ", matriz[l][c]);
+                soma_secundaria = soma_secundaria + matriz[l][c];
+            }else{
+                printf(" | |");
             }
         }
+        printf("\n");
     }
+    
+    printf("\n------------------------------");
+    printf("\nA soma da diagonal secundaria e: %i", soma_secundaria);
+    printf("\n------------------------------\n");
 
-    printf("\nA soma da diagonal secundaria eh: %i", soma);
-
-    return 0;
+   
 }
